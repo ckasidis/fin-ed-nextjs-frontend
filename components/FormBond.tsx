@@ -1,18 +1,34 @@
 import { SyntheticEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
+import ErrorMessage from './common/warning';
 
 const FormBond: NextPage = () => {
-	const [bondPrice, setBondPrice] = useState('');
-	const [faceValue, setFaceValue] = useState('');
-	const [coupon, setCoupon] = useState('');
+	const [bondPrice, setBondPrice] = useState(0); // > 0
+	const [faceValue, setFaceValue] = useState(0); // > 0
+	const [coupon, setCoupon] = useState(0); // >= 0
 	const [compound, setCompound] = useState('annually');
-	const [showInvalid, setShowInvalid] = useState(false);
+
+	const [errorBP, setErrorBP] = useState(false);
+	const [errorFV, setErrorFV] = useState(false);
+	const [errorCR, setErrorCR] = useState(false);
 
 	const handleValidation = () => {
 		let isValid = true;
-		if (bondPrice.length <= 0) {
+		setErrorBP(false);
+		setErrorFV(false);
+		setErrorCR(false);
+		if (bondPrice <= 0) {
 			isValid = false;
+			setErrorBP(true);
+		}
+		if (faceValue <= 0) {
+			isValid = false;
+			setErrorFV(true);
+		}
+		if (coupon < 0) {
+			isValid = false;
+			setErrorCR(true);
 		}
 		return isValid;
 	};
@@ -22,20 +38,11 @@ const FormBond: NextPage = () => {
 
 		let isValidForm = handleValidation();
 
-		if (!isValidForm) {
-			setShowInvalid(true);
-			return;
-		}
+		if (!isValidForm) return;
 
-		setShowInvalid(false);
-
-		const floatBondPrice = parseFloat(bondPrice);
-		const floatFaceValue = parseFloat(faceValue);
-		const floatCoupon = parseFloat(coupon);
-
-		console.log(floatBondPrice);
-		console.log(floatFaceValue);
-		console.log(floatCoupon);
+		console.log(bondPrice);
+		console.log(faceValue);
+		console.log(coupon);
 		console.log(compound);
 		// Data Visualization
 	};
@@ -55,7 +62,7 @@ const FormBond: NextPage = () => {
 						value={bondPrice}
 						placeholder="enter bond price"
 						onChange={(e) => {
-							setBondPrice(e.target.value);
+							setBondPrice(+e.target.value);
 						}}
 					/>
 				</div>
@@ -71,7 +78,7 @@ const FormBond: NextPage = () => {
 						value={faceValue}
 						placeholder="enter face value"
 						onChange={(e) => {
-							setFaceValue(e.target.value);
+							setFaceValue(+e.target.value);
 						}}
 					/>
 				</div>
@@ -87,31 +94,41 @@ const FormBond: NextPage = () => {
 						value={coupon}
 						placeholder="enter coupon rate"
 						onChange={(e) => {
-							setCoupon(e.target.value);
+							setCoupon(+e.target.value);
 						}}
 					/>
 				</div>
 			</div>
-			<label htmlFor="compound" className="text-gray-900 mt-5 mb-2">
-				Compound<span className="text-red-500">*</span>
-			</label>
-			<select
-				className="p-4"
-				value={compound}
-				onChange={(e) => {
-					setCompound(e.target.value);
-				}}
-			>
-				<option value="annually">Annually</option>
-				<option value="semiannually">Semi-annually</option>
-				<option value="quarterly">Quarterly</option>
-				<option value="monthly">Monthly</option>
-			</select>
-			{showInvalid && (
-				<p className="pt-5 text-red-500 text-lg font-bold">
-					Please fill all fields before sending
-				</p>
-			)}
+			<div className="grid mt-2">
+				<label htmlFor="compound" className="text-gray-900 mt-5 mb-2">
+					Compound<span className="text-red-500">*</span>
+				</label>
+				<select
+					className="p-4"
+					value={compound}
+					onChange={(e) => {
+						setCompound(e.target.value);
+					}}
+				>
+					<option value="annually">Annually</option>
+					<option value="semiannually">Semi-annually</option>
+					<option value="quarterly">Quarterly</option>
+					<option value="monthly">Monthly</option>
+				</select>
+			</div>
+			<div className="mt-5">
+				{errorBP && (
+					<ErrorMessage>Bond Price must have a value more than 0</ErrorMessage>
+				)}
+				{errorFV && (
+					<ErrorMessage>Face Value must have a value more than 0</ErrorMessage>
+				)}
+				{errorCR && (
+					<ErrorMessage>
+						Coupon Rate must not have a negative value
+					</ErrorMessage>
+				)}
+			</div>
 			<motion.button
 				type="submit"
 				className="hover:bg-emerald-400 bg-gray-900 w-60 sm:w-80 px-10 py-5 mt-10 rounded-full text-gray-50 text-lg text-center font-bold"

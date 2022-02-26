@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
-import ErrorMessage from './common/warning';
+import ErrorMessage from './common/ErrorMessage';
 
 const FormBond: NextPage = () => {
 	const [bondPrice, setBondPrice] = useState(0); // > 0

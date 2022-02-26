@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
-import ErrorMessage from './common/warning';
+import ErrorMessage from './common/ErrorMessage';
 
 const FormBond: NextPage = () => {
 	const [depositAmount, setDepositAmount] = useState(0);
@@ -151,6 +151,7 @@ const FormBond: NextPage = () => {
 					</ErrorMessage>
 				)}
 			</div>
+			[]
 			<motion.button
 				type="submit"
 				className="hover:bg-emerald-400 bg-gray-900 w-60 sm:w-80 px-10 py-5 mt-10 rounded-full text-gray-50 text-lg text-center font-bold"

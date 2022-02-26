@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import FormDeposit from '../../components/FormDeposit';
 
-const deposit: NextPage = () => {
+const DepositPage: NextPage = () => {
 	return (
 		<div>
 			<FormDeposit />
@@ -9,4 +9,4 @@ const deposit: NextPage = () => {
 	);
 };
 
-export default deposit;
+export default DepositPage;

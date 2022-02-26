@@ -147,11 +147,10 @@ const FormBond: NextPage = () => {
 				)}
 				{errorWT && (
 					<ErrorMessage>
-						Deposit Duration must be at least 3 months
+						f Deposit Duration must be at least 3 months
 					</ErrorMessage>
 				)}
 			</div>
-			[]
 			<motion.button
 				type="submit"
 				className="hover:bg-emerald-400 bg-gray-900 w-60 sm:w-80 px-10 py-5 mt-10 rounded-full text-gray-50 text-lg text-center font-bold"

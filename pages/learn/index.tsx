@@ -74,7 +74,7 @@ const LearnPage: NextPage = () => {
 			<GridCard
 				icon={FaFileContract}
 				title="Forward Contract"
-				path="/learn/"
+				path="/learn/forward-contract"
 				bgColor="bg-orange-600"
 			>
 				<h1>Forward Contract</h1>

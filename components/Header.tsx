@@ -5,7 +5,7 @@ import NavItem from './NavItem';
 
 const Header: NextPage = () => {
 	return (
-		<div className="sticky top-0 left-0 bg-emerald-400 ">
+		<div className="sticky top-0 left-0 bg-emerald-400">
 			<nav className="flex items-center justify-between max-w-7xl mx-auto p-10">
 				<div className="underline">
 					<Link href="/">Logo</Link>

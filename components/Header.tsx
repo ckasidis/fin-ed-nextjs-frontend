@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { FaMoneyCheckAlt, FaUserGraduate } from 'react-icons/fa';
+import { FaUserGraduate } from 'react-icons/fa';
 import NavItem from './NavItem';
 
 const Header: NextPage = () => {
@@ -11,7 +11,7 @@ const Header: NextPage = () => {
 					<Link href="/">FinEd</Link>
 				</div>
 				<ul className="flex gap-5">
-					<NavItem icon={FaUserGraduate} text="Learn" path="/learn" />
+					<NavItem icon={FaUserGraduate} text="Learn" path="/" />
 				</ul>
 			</nav>
 		</div>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import ErrorMessage from '../../components/common/ErrorMessage';
-import { useD3 } from '../../lib/d3';
+import ErrorMessage from '../components/common/ErrorMessage';
+import { useD3 } from '../lib/d3';
 import * as d3 from 'd3';
 
 const ForwardContractPage = () => {

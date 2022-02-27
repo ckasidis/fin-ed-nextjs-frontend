@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-const DigitalAssetPage = dynamic(() => import('../../dynamic/CryptoGraph'), {
+const DigitalAssetPage = dynamic(() => import('../dynamic/CryptoGraph'), {
 	ssr: false,
 });
 

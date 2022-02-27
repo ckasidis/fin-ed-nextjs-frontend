@@ -15,9 +15,9 @@ const LearnPage: NextPage = () => {
 				path="/learn/deposit"
 				bgColor="bg-rose-700"
 			>
-				<h1>Deposit</h1>
-				<h2>Money held at bank</h2>
-				<h3>Definition from Investopedia</h3>
+				<h1 className="text-2xl font-bold">Deposit</h1>
+				<h2 className="text-lg font-bold">Money held at bank</h2>
+				<h3>Definition from Investopedia:</h3>
 				<p>
 					{`"A deposit is a financial term that means money held at a bank. A
 					deposit is a transaction involving a transfer of money to another
@@ -31,9 +31,11 @@ const LearnPage: NextPage = () => {
 				path="/learn/stock"
 				bgColor="bg-violet-600"
 			>
-				<h1>Stock</h1>
-				<h2>Fractional ownership of corporation</h2>
-				<h3>Definition from Investopedia</h3>
+				<h1 className="text-2xl font-bold">Stock</h1>
+				<h2 className="text-lg font-bold">
+					Fractional ownership of corporation
+				</h2>
+				<h3>Definition from Investopedia:</h3>
 				<p>
 					{`"A stock (also known as equity) is a security that represents the
 					ownership of a fraction of a corporation. This entitles the owner of
@@ -54,9 +56,9 @@ const LearnPage: NextPage = () => {
 				path="/learn/bond"
 				bgColor="bg-amber-500"
 			>
-				<h1 className="text-lg font-bold">Bond</h1>
-				<h2>Loan made to borrower</h2>
-				<h3>Definition from Investopedia</h3>
+				<h1 className="text-2xl font-bold">Bond</h1>
+				<h2 className="text-lg font-bold">Loan made to borrower</h2>
+				<h3>Definition from Investopedia:</h3>
 				<p>
 					{`"A bond is a fixed-income instrument that represents a loan made
 					by an investor to a borrower (typically corporate or governmental). A
@@ -77,9 +79,9 @@ const LearnPage: NextPage = () => {
 				path="/learn/forward-contract"
 				bgColor="bg-orange-600"
 			>
-				<h1>Forward Contract</h1>
-				<h2>Buy/Sell asset on future date</h2>
-				<h3>Definition from Investopedia</h3>
+				<h1 className="text-2xl font-bold">Forward Contract</h1>
+				<h2 className="text-lg font-bold">Buy/Sell asset on future date</h2>
+				<h3>Definition from Investopedia:</h3>
 				<p>
 					{`"A forward contract is a customized contract between two parties to buy 
 					or sell an asset at a specified price on a future date. A forward contract 
@@ -93,9 +95,11 @@ const LearnPage: NextPage = () => {
 				path="/learn/option"
 				bgColor="bg-sky-600"
 			>
-				<h1>Option</h1>
-				<h2>Right but not obligation to buy/sell asset</h2>
-				<h3>Definition from Investopedia</h3>
+				<h1 className="text-2xl font-bold">Option</h1>
+				<h2 className="text-lg font-bold">
+					Right but not obligation to buy/sell asset
+				</h2>
+				<h3>Definition from Investopedia:</h3>
 				<p>
 					{`"Call options are financial contracts that give the option buyer the
 					right but not the obligation to buy a stock, bond, commodity, or other
@@ -127,8 +131,10 @@ const LearnPage: NextPage = () => {
 				path="/learn/digital-asset"
 				bgColor="bg-lime-600"
 			>
-				<h1>{`Digital Asset (Crypto)`}</h1>
-				<h2>Digital currency secured by cryptography</h2>
+				<h1 className="text-2xl font-bold">{`Digital Asset (Crypto)`}</h1>
+				<h2 className="text-lg font-bold">
+					Digital currency secured by cryptography:
+				</h2>
 				<h3>Definition from Investopedia</h3>
 				<p>
 					{`"A cryptocurrency is a digital or virtual currency that is secured

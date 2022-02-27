@@ -6,10 +6,10 @@ import * as d3 from 'd3';
 
 const ForwardContractPage = () => {
 	const [contractType, setContractType] = useState('long');
-	const [stockName, setStockName] = useState('');
-	const [stockAmount, setStockAmount] = useState(0);
-	const [purchasePrice, setPurchasePrice] = useState(0);
-	const [timePeriod, setTimePeriod] = useState(0);
+	const [stockName, setStockName] = useState('Goldman Sachs');
+	const [stockAmount, setStockAmount] = useState(1000);
+	const [purchasePrice, setPurchasePrice] = useState(350);
+	const [timePeriod, setTimePeriod] = useState(36);
 
 	const [errorSA, setErrorSA] = useState(false);
 	const [errorPP, setErrorPP] = useState(false);
@@ -33,6 +33,10 @@ const ForwardContractPage = () => {
 			setErrorPP(true);
 		}
 		if (timePeriod <= 0) {
+			isValid = false;
+			setErrorTP(true);
+		}
+		if (timePeriod > 36) {
 			isValid = false;
 			setErrorTP(true);
 		}
@@ -254,7 +258,10 @@ const ForwardContractPage = () => {
 	);
 
 	return (
-		<form className="grid w-3/4 max-w-3xl mx-auto" onSubmit={handleSubmit}>
+		<form
+			className="grid w-3/4 max-w-3xl mx-auto pt-10"
+			onSubmit={handleSubmit}
+		>
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 				<div className="grid">
 					<label htmlFor="contractType" className="text-gray-900 mt-5 mb-2">
@@ -350,7 +357,7 @@ const ForwardContractPage = () => {
 					</ErrorMessage>
 				)}
 				{errorTP && (
-					<ErrorMessage>Time Period must have a value more than 0</ErrorMessage>
+					<ErrorMessage>Time Period must be between 1 and 36</ErrorMessage>
 				)}
 			</div>
 			<motion.button

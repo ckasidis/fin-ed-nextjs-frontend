@@ -6,11 +6,11 @@ import * as d3 from 'd3';
 
 const OptionPage = () => {
 	const [optionType, setOptionType] = useState('call');
-	const [optionAmount, setOptionAmount] = useState(0);
-	const [stockName, setStockName] = useState('');
-	const [optionPrice, setOptionPrice] = useState(0);
-	const [exercisePrice, setExercisePrice] = useState(0);
-	const [expiryDate, setExpiryDate] = useState(0);
+	const [optionAmount, setOptionAmount] = useState(100);
+	const [stockName, setStockName] = useState('Example');
+	const [optionPrice, setOptionPrice] = useState(15);
+	const [exercisePrice, setExercisePrice] = useState(20);
+	const [expiryDate, setExpiryDate] = useState(36);
 
 	const [errorOA, setErrorOA] = useState(false);
 	const [errorOP, setErrorOP] = useState(false);
@@ -264,6 +264,10 @@ const OptionPage = () => {
 			isValid = false;
 			setErrorED(true);
 		}
+		if (expiryDate > 36) {
+			isValid = false;
+			setErrorED(true);
+		}
 
 		return isValid;
 	};
@@ -285,7 +289,10 @@ const OptionPage = () => {
 	};
 
 	return (
-		<form className="grid w-3/4 max-w-3xl mx-auto" onSubmit={handleSubmit}>
+		<form
+			className="grid w-3/4 max-w-3xl mx-auto pt-10"
+			onSubmit={handleSubmit}
+		>
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 				<div className="grid">
 					<label htmlFor="optionType" className="text-gray-900 mt-5 mb-2">
@@ -402,7 +409,7 @@ const OptionPage = () => {
 					</ErrorMessage>
 				)}
 				{errorED && (
-					<ErrorMessage>Expiry Date must have a value more than 0</ErrorMessage>
+					<ErrorMessage>Expiry Date must be between 1 and 36</ErrorMessage>
 				)}
 			</div>
 			<motion.button

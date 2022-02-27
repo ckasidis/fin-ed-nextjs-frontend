@@ -112,9 +112,9 @@ const CSGraph = () => {
 	const stockSymbolList = ['GS', 'TSLA', 'GOOGL', 'AAPL', 'IBM'];
 
 	return (
-		<div className="grid place-items-center">
+		<div className="grid justify-center pt-10">
 			<Plot data={data} layout={layout} />
-			<ul className="flex gap-4 pt-10">
+			<ul className="flex gap-4 pt-10 mx-auto">
 				{stockSymbolList.map((stock) => (
 					<motion.li
 						onClick={() => {

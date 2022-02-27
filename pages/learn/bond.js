@@ -5,9 +5,9 @@ import { useD3 } from '../../lib/d3';
 import * as d3 from 'd3';
 
 const BondPage = () => {
-	const [bondPrice, setBondPrice] = useState(0); // > 0
-	const [faceValue, setFaceValue] = useState(0); // > 0
-	const [coupon, setCoupon] = useState(0); // >= 0
+	const [bondPrice, setBondPrice] = useState(1000); // > 0
+	const [faceValue, setFaceValue] = useState(1000); // > 0
+	const [coupon, setCoupon] = useState(5); // >= 0
 	const [compound, setCompound] = useState('annually');
 
 	const [errorBP, setErrorBP] = useState(false);
@@ -378,7 +378,10 @@ const BondPage = () => {
 	};
 
 	return (
-		<form className="grid w-3/4 max-w-3xl mx-auto" onSubmit={handleSubmit}>
+		<form
+			className="grid w-3/4 max-w-3xl mx-auto pt-10"
+			onSubmit={handleSubmit}
+		>
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 				<div className="grid">
 					<label htmlFor="bondPrice" className="text-gray-900 mt-5 mb-2">

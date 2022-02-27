@@ -110,9 +110,9 @@ const CryptoGraph = () => {
 	const cryptoSymbolList = ['BNB', 'BTC', 'ETH', 'USDT', 'XRP'];
 
 	return (
-		<div className="grid place-items-center">
+		<div className="grid justify-center placeholder-violet-100">
 			<Plot data={data} layout={layout} />
-			<ul className="flex gap-4 pt-10">
+			<ul className="flex gap-4 pt-10 mx-auto">
 				{cryptoSymbolList.map((crypto) => (
 					<motion.li
 						onClick={() => {

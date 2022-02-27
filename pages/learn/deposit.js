@@ -5,10 +5,10 @@ import { useD3 } from '../../lib/d3';
 import * as d3 from 'd3';
 
 const DepositPage = () => {
-	const [depositAmount, setDepositAmount] = useState(0);
-	const [interest, setInterest] = useState(0);
-	const [withdrawTime, setWithdrawTime] = useState(0);
-	const [inflation, setInflation] = useState(0);
+	const [depositAmount, setDepositAmount] = useState(100);
+	const [interest, setInterest] = useState(0.5);
+	const [withdrawTime, setWithdrawTime] = useState(36);
+	const [inflation, setInflation] = useState(5);
 	const [compound, setCompound] = useState('annually');
 
 	const [errorDA, setErrorDA] = useState(false);
@@ -286,6 +286,10 @@ const DepositPage = () => {
 			isValid = false;
 			setErrorWT(true);
 		}
+		if (withdrawTime > 36) {
+			isValid = false;
+			setErrorWT(true);
+		}
 
 		return isValid;
 	};
@@ -307,7 +311,10 @@ const DepositPage = () => {
 	};
 
 	return (
-		<form className="grid w-3/4 max-w-3xl mx-auto" onSubmit={handleSubmit}>
+		<form
+			className="grid w-3/4 max-w-3xl mx-auto pt-10"
+			onSubmit={handleSubmit}
+		>
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 				<div className="grid">
 					<label htmlFor="depositAmount" className="text-gray-900 mt-5 mb-2">
@@ -403,7 +410,7 @@ const DepositPage = () => {
 				)}
 				{errorWT && (
 					<ErrorMessage>
-						f Deposit Duration must be at least 3 months
+						Deposit Duration must be between 3 to 36 months
 					</ErrorMessage>
 				)}
 			</div>

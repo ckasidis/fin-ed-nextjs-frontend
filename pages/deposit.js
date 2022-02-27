@@ -6,7 +6,7 @@ import * as d3 from 'd3';
 
 const DepositPage = () => {
 	const [depositAmount, setDepositAmount] = useState(100);
-	const [interest, setInterest] = useState(0.5);
+	const [interest, setInterest] = useState(1);
 	const [withdrawTime, setWithdrawTime] = useState(36);
 	const [inflation, setInflation] = useState(5);
 	const [compound, setCompound] = useState('annually');

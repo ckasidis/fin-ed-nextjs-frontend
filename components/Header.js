@@ -1,9 +1,8 @@
-import { NextPage } from 'next';
 import Link from 'next/link';
 import { FaUserGraduate } from 'react-icons/fa';
 import NavItem from './NavItem';
 
-const Header: NextPage = () => {
+const Header = () => {
 	return (
 		<div className="sticky top-0 left-0 bg-emerald-400">
 			<nav className="flex items-center justify-between max-w-7xl mx-auto p-10">

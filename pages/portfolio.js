@@ -1,6 +1,4 @@
-import { NextPage } from 'next';
-
-const PortfolioPage: NextPage = () => {
+const PortfolioPage = () => {
 	return <div>Build your Portfolio</div>;
 };
 

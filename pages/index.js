@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import { BsPiggyBankFill } from 'react-icons/bs';
 import { FaFileContract, FaMoneyCheck } from 'react-icons/fa';
 import { GrBitcoin } from 'react-icons/gr';
@@ -6,7 +5,7 @@ import { MdAutoGraph } from 'react-icons/md';
 import { RiStockFill } from 'react-icons/ri';
 import GridCard from '../components/common/GridCard';
 
-const LearnPage: NextPage = () => {
+const LearnPage = () => {
 	return (
 		<div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl p-5 mx-auto">
 			<GridCard

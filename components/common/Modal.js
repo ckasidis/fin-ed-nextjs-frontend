@@ -1,10 +1,4 @@
-import { NextPage } from 'next';
-
-interface Props {
-	handleClose: () => void;
-}
-
-const Modal: NextPage<Props> = ({ handleClose, children }) => {
+const Modal = ({ handleClose, children }) => {
 	return (
 		<div
 			className="fixed top-0 left-0 w-screen h-screen bg-gray-900 bg-opacity-80"
